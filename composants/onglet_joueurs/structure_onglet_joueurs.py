@@ -1,11 +1,11 @@
 import streamlit as st
 from composants.onglet_joueurs.Affichage_joueurs_selectionnes import afficher_joueurs_selectionnes
+from composants.onglet_joueurs.affichage_recherche_joueur import afficher_recherche_joueurs
 from composants.onglet_joueurs.slider_nb_joueurs import afficher_slider_nb_joueurs
 from donnees.donnees_filtrees import obtenir_donnees_filtrees
 from donnees.tester_donnees import tester_donnees
 from composants.onglet_joueurs.tableau import afficher_tableau
 from composants.onglet_joueurs.joueurs_selectionnes import initialiser_selection_joueurs
-from sandbox import afficher_recherche_joueurs
 
 
 
