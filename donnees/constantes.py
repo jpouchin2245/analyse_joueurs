@@ -1,3 +1,5 @@
+CHEMIN_DONNEES="donnees/all_players_clean.csv"
+
 STATISTIQUES_PAR_POSTE = {
     "Tout selectionner":[
         "PAC", 

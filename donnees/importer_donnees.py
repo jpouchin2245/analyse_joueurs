@@ -1,14 +1,13 @@
 from pathlib import Path
 import streamlit as st
 import pandas as pd
-from decouple import config
+from donnees.constantes import CHEMIN_DONNEES
 
 
 
 def importer_donnees():
-    fichier = config("CHEMIN_DONNEES")
-    if fichier is not None and Path(fichier).exists():
-        donnees = pd.read_csv(fichier, sep=",")
+    if CHEMIN_DONNEES is not None and Path(CHEMIN_DONNEES).exists():
+        donnees = pd.read_csv(CHEMIN_DONNEES, sep=",")
         return donnees
     else:
         st.caption("erreur fichier CSV introuvable")
