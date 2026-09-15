@@ -9,7 +9,7 @@ def afficher_histogramme():
     
     fig, ax = plt.subplots(figsize=(15, 6))
     sns.histplot(donnees_filtrees[variable], bins=20, kde=False, ax=ax)
-    ax.set_title(f"Histogramme de {variable}")
+    ax.set_title(f"Histogramme de {variable} sur les données filtrées")
     ax.set_xlabel(variable)
     ax.set_ylabel("Fréquence")
     st.pyplot(fig)

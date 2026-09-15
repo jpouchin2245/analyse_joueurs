@@ -20,13 +20,16 @@ def sliders_statistiques():
         slider(statistique)
 
 def slider_age():
-    slider("Age", min_value=17, max_value=50, value=50)
+    slider("Age", min_value=17, max_value=50, value=50, label="Âge maximum")
 
 
 
-def slider(statistique, min_value=0, max_value=100, value=50):
+def slider(statistique, min_value=0, max_value=100, value=0, label=None):
+    if label is None:
+        label = statistique
+        
     st.session_state[statistique] = st.sidebar.slider(
-        statistique,
+        label,
         min_value=min_value,
         max_value=max_value,
         value=value
