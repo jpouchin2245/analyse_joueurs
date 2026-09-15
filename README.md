@@ -8,11 +8,10 @@ Depuis la racine du projet, dans un environnement Python :
 
 ```powershell
 python -m pip install -r requirements.txt
-python -m pip install "streamlit>=1.49" streamlit-searchbox
 python -m streamlit run app.py
 ```
 
-La deuxième commande complète les dépendances actuelles : la recherche utilise `streamlit-searchbox` et la sélection de cellules demande une version récente de Streamlit. Le minimum déclaré dans `requirements.txt` n'a pas encore été actualisé.
+Toutes les dépendances sont déclarées dans `requirements.txt`, notamment `streamlit>=1.49` pour les interactions du tableau et `streamlit-searchbox>=0.1.24` pour les suggestions de recherche.
 
 Les bibliothèques principales sont Streamlit, Pandas, Plotly, Matplotlib, Seaborn et Streamlit Searchbox.
 
@@ -24,10 +23,9 @@ La barre latérale permet de restreindre les données par :
 
 - championnat (`League`) ;
 - poste (`Position`) ;
+- genre (`gender`) ;
 - âge maximum ;
 - seuils minimums de statistiques, adaptés au poste choisi.
-
-Un sélecteur de genre (`gender`) est également affiché, mais son filtrage n'est pas encore effectif : le traitement utilise actuellement la clé `Gender` au lieu de `gender`.
 
 Les filtres alimentent le tableau, la recherche, les statistiques descriptives, l'histogramme, la matrice de corrélation et le nuage de points. Ils définissent aussi la population utilisée pour calculer le joueur moyen.
 
@@ -100,6 +98,8 @@ Seuls les joueurs correspondant aux filtres apparaissent dans le nuage. Un joueu
 - `app.py` : point d'entrée et organisation des quatre onglets.
 - `composants/` : filtres, tableaux, recherche, fiches et graphiques.
 - `donnees/` : CSV, chargement, filtrage et constantes.
-- `sandbox.py` : prototypes et fonctions proposées pour l'intégration. L'onglet joueurs importe actuellement sa fonction de recherche depuis ce fichier : il reste nécessaire au lancement de l'application.
+- `composants/onglet_joueurs/rechercher_joueur.py` : recherche des correspondances et ajout du joueur choisi.
+- `composants/onglet_joueurs/affichage_recherche_joueur.py` : barre de recherche et menu de suggestions, intégrés à l'onglet joueurs.
+- `requirements.txt` : dépendances nécessaires à l'installation.
 
 La sélection commune est conservée dans `st.session_state.joueurs_selectionnes`, sous forme de lignes Pandas complètes, utilisables par les fiches et les graphiques.

@@ -2,7 +2,7 @@ import streamlit as st
 
 def obtenir_donnees_filtrees():
     donnees = st.session_state.donnees
-    for variable in ["League", "Position", "Gender"]:
+    for variable in ["League", "Position", "gender"]:
         donnees = filtrer_donnees_selecteurs(donnees, variable)
 
     for statistique in st.session_state.liste_statistiques:
