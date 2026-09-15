@@ -1,0 +1,33 @@
+# Environnements virtuels Python
+venv/
+.venv/
+env/
+
+# Cache et fichiers compiles Python
+__pycache__/
+*.py[cod]
+
+# Variables locales et secrets Streamlit
+.streamlit/secrets.toml
+
+# Caches des outils Python et notebooks
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.coverage
+htmlcov/
+
+# Fichiers generes lors du packaging
+build/
+dist/
+*.egg-info/
+
+# Fichiers locaux des editeurs et du systeme
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+
